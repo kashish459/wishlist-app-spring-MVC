@@ -21,7 +21,13 @@
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>WishList</title>
-
+<style>
+.img-wish {
+  width: 100%;
+  
+  height: 70vh;
+  }
+</style>
 </head>
 
 <body>
@@ -53,7 +59,13 @@
 
 			<div class="section col s10 center-align " style="margin-top: 3em">
 
-
+				<c:if test="${page=='home' }">
+					<div class="gfg">
+						<img
+							src="${pageContext.request.contextPath}/resources/images/wish.svg"
+							alt="wish image" class="img-wish">
+						</div>
+				</c:if>
 
 
 
@@ -102,9 +114,9 @@
 											value="${wish.wishDate}"></c:out></span>
 								</div>
 								<div class="collapsible-body">
-									<p>
+									<h5>
 										<c:out value="${wish.wishContentString}"></c:out>
-									</p>
+									</h5>
 								</div>
 							</li>
 						</c:forEach>
@@ -114,7 +126,7 @@
 		</div>
 	</div>
 
-		<%@include file="footer.jsp"%>
+	<%@include file="footer.jsp"%>
 
 	<!--JavaScript at end of body for optimized loading-->
 	<script
